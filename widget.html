@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World</title>
+	<script src="http://fb.me/react-0.12.2.js"></script>
+	<script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+</head>
+<body>
+
+
+<script type="text/jsx">
+	var App = React.createClass({
+		getInitialState: function() {
+			return {
+				txt: 'the state txt',
+				id: 0
+			};
+		},
+		update: function(e) {
+			this.setState({
+				txt: e.target.value
+			});
+		},
+		render: function() {
+			return (
+				<div>
+					<Widget txt={this.state.txt} update={this.update} />
+					<Widget txt={this.state.txt} update={this.update} />
+					<Widget txt={this.state.txt} update={this.update} />
+					<Widget txt={this.state.txt} update={this.update} />
+					<Widget txt={this.state.txt} update={this.update} />
+					<Widget txt={this.state.txt} update={this.update} />
+					<Widget txt={this.state.txt} update={this.update} />
+					<Widget txt={this.state.txt} update={this.update} />
+					<Widget txt={this.state.txt} update={this.update} />
+					<Widget txt={this.state.txt} update={this.update} />
+					<Widget txt={this.state.txt} update={this.update} />
+				</div>
+			);
+		}
+	});
+
+	var Widget = React.createClass({
+		render: function() {
+			return (
+				<div>
+					<input type="text" onChange={this.props.update} />
+					<br />
+					<b>{this.props.txt}</b>
+				</div>
+			);
+		}
+	});	
+
+	React.render(<App txt='this is the txt prop' />, document.body);
+
+	
+</script>
+
+<script>
+// 	var App = React.createClass({
+// 		render: function() {
+// 			return React.DOM.h1(null, "Hi there")
+// 		}
+// 	});
+
+// 	React.render(App(), document.body)
+</script>
+
+<script>
+// 	var App = React.createClass({
+// 		render: function() {
+// 			return React.createElement("h1", null, "Yo")
+// 		}
+// 	});
+
+// 	React.render(React.createElement(App), document.body)
+</script>
+Í	
+</body>
+</html>

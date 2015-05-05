@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World</title>
+	<script src="http://fb.me/react-0.12.2.js"></script>
+	<script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+</head>
+<body>
+
+
+<script type="text/jsx">
+	var App = React.createClass({
+		getDefaultProps: function() {
+			return {
+				txt: 'this is a default prop',
+				cat: 0	
+			};
+		},
+		propTypes: {
+			txt: React.PropTypes.string,
+			cat: React.PropTypes.number.isRequired
+		},
+		render: function() {
+			var txt = this.props.txt;
+			var cat = this.props.cat;
+			return (
+				<div>
+					<b>Bold</b>
+					<h1>txt: {txt}</h1>
+					<h1>cat: {cat}</h1>
+				</div>
+			);
+		}
+	});
+
+	React.render(<App />, document.body);
+</script>
+
+<script>
+// 	var App = React.createClass({
+// 		render: function() {
+// 			return React.DOM.h1(null, "Hi there")
+// 		}
+// 	});
+
+// 	React.render(App(), document.body)
+</script>
+
+<script>
+// 	var App = React.createClass({
+// 		render: function() {
+// 			return React.createElement("h1", null, "Yo")
+// 		}
+// 	});
+
+// 	React.render(React.createElement(App), document.body)
+</script>
+Í	
+</body>
+</html>
