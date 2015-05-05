@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World</title>
+	<script src="http://fb.me/react-0.12.2.js"></script>
+	<script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+</head>
+<body>
+
+<script type="text/jsx">
+	var App = React.createClass({
+		getInitialState: function() {
+			return {increasing: false};
+		},
+		update: function() {
+			var newVal = this.props.val + 1;
+			this.setProps({
+				val: newVal
+			});
+		},
+		componentWillReceiveProps: function(nextProps) {
+			this.setState({
+				increasing: nextProps.val > this.props.val
+			});
+		},
+		shouldComponentUpdate: function(nextProps, nextState) {
+			return nextProps.val % 5 === 0;
+		},
+		componentWillUpdate: function(nextProps, nextState) {
+			console.log('nextProps ===' + JSON.stringify(nextProps));
+		},
+		render: function() {
+			console.log(this.state.increasing);
+			return (
+				<button onClick={this.update}>{this.props.val}</button>
+			);
+		},
+		componentDidMount: function(prevProps, nextState) {
+			console.log('prevProps ===' + JSON.stringify(prevProps));
+		} 
+	});
+	React.render(<App val={0}/>, document.body);
+
+</script>
+
+<script>
+// 	var App = React.createClass({
+// 		render: function() {
+// 			return React.DOM.h1(null, "Hi there")
+// 		}
+// 	});
+
+// 	React.render(App(), document.body)
+</script>
+
+<script>
+// 	var App = React.createClass({
+// 		render: function() {
+// 			return React.createElement("h1", null, "Yo")
+// 		}
+// 	});
+
+// 	React.render(React.createElement(App), document.body)
+</script>
+Í	
+</body>
+</html>
