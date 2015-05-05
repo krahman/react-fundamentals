@@ -21,19 +21,17 @@
 			})
 		},
 		componentWillMount: function() {
-			this.setState({
-				m: 2
-			});
+			console.log('mounting');
 		},
 		render: function() {
 			console.log('rendering');
-			return <button onClick={this.update}>{this.state.val * this.state.m}</button>
+			return <button onClick={this.update}>{this.state.val}</button>
 		},
 		componentDidMount: function() {
-			this.inc = setInterval(this.update, 500);
+			console.log('mounted');
 		},
 		componentWillUnmount: function() {
-			clearInterval(this.inc);
+			console.log('Bye!');
 		}
 	});
 

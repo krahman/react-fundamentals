@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World</title>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<script src="http://fb.me/react-0.12.2.js"></script>
+	<script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+</head>
+<body>
+
+
+<script type="text/jsx">
+	var App = React.createClass({
+		render: function() {
+			return <Button>I <Heart /> React</Button>		
+		}
+	});
+
+	var Button = React.createClass({
+		render: function() {
+			return <button>{this.props.children}</button>
+		}
+	});
+
+	var Heart = React.createClass({
+		render: function() {
+			return <span className="glyphicon glyphicon-heart"></span>
+		}
+	});
+
+	React.render(<App />, document.body)
+</script>
+
+<script>
+// 	var App = React.createClass({
+// 		render: function() {
+// 			return React.DOM.h1(null, "Hi there")
+// 		}
+// 	});
+
+// 	React.render(App(), document.body)
+</script>
+
+<script>
+// 	var App = React.createClass({
+// 		render: function() {
+// 			return React.createElement("h1", null, "Yo")
+// 		}
+// 	});
+
+// 	React.render(React.createElement(App), document.body)
+</script>
+Í	
+</body>
+</html>
